@@ -1,0 +1,39 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mybookheaven-dev-b7cd9-authRole",
+      "UnauthRoleArn": "arn:aws:iam::767397737475:role/amplify-mybookheaven-dev-b7cd9-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::767397737475:role/amplify-mybookheaven-dev-b7cd9-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-mybookheaven-dev-b7cd9-deployment",
+      "UnauthRoleName": "amplify-mybookheaven-dev-b7cd9-unauthRole",
+      "StackName": "amplify-mybookheaven-dev-b7cd9",
+      "StackId": "arn:aws:cloudformation:ap-south-1:767397737475:stack/amplify-mybookheaven-dev-b7cd9/88f813b0-f4fc-11ef-a099-0a6ed709d00d",
+      "AmplifyAppId": "d3klul7r2rfvev"
+    },
+    "categories": {
+      "auth": {
+        "mybookheaven2d21217a": {}
+      },
+      "storage": {
+        "BookImages": {}
+      },
+      "function": {
+        "processPayment": {
+          "deploymentBucketName": "amplify-mybookheaven-dev-b7cd9-deployment",
+          "s3Key": "amplify-builds/processPayment-556b306745324a65344c-build.zip"
+        },
+        "createOrder": {
+          "deploymentBucketName": "amplify-mybookheaven-dev-b7cd9-deployment",
+          "s3Key": "amplify-builds/createOrder-335855446d2f4766684e-build.zip"
+        }
+      },
+      "api": {
+        "mybookheaven": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}
