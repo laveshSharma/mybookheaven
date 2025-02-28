@@ -39,7 +39,7 @@ const Admin = () => {
         const extension = file.name.split(".")[1];
         const name = file.name.split(".")[0];
         const key = `images/${uuidv4()}${name}.${extension}`;
-        const url = `https://${bucket}.s3.${region}.amazonaws.com/public/${key}`;
+        
         try {
             await uploadData({
                 key: key,
@@ -48,9 +48,10 @@ const Admin = () => {
                     contentType: file.type
                 }
             });
-            const imageUrl = await getUrl({ key: key });
+            const imageUrl = await getUrl({ key });
+            console.log("Image URL:", imageUrl.url);
             setImage(imageUrl.url);
-            setBookDetails({ ...bookDetails, image: url });
+            setBookDetails({ ...bookDetails, image: imageUrl.url });
         } catch (err) {
             console.log('Error uploading image:', err);
         }

@@ -21,11 +21,11 @@
       "function": {
         "processPayment": {
           "deploymentBucketName": "amplify-mybookheaven-dev-b7cd9-deployment",
-          "s3Key": "amplify-builds/processPayment-556b306745324a65344c-build.zip"
+          "s3Key": "amplify-builds/processPayment-434f4b514554754c764a-build.zip"
         },
         "createOrder": {
           "deploymentBucketName": "amplify-mybookheaven-dev-b7cd9-deployment",
-          "s3Key": "amplify-builds/createOrder-335855446d2f4766684e-build.zip"
+          "s3Key": "amplify-builds/createOrder-716a70396f7a6f755944-build.zip"
         }
       },
       "api": {
