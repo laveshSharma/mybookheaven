@@ -3,10 +3,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { generateClient } from "aws-amplify/api";
 import { uploadData, getUrl } from "aws-amplify/storage";
-import { Authenticator } from "@aws-amplify/ui-react";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 import { createBook } from '../api/mutations';
 import config from '../aws-exports';
 import { signOut } from "aws-amplify/auth";
+import '@aws-amplify/ui-react/styles.css';
 
 // Extract S3 bucket details from Amplify config
 const { aws_user_files_s3_bucket_region: region, aws_user_files_s3_bucket: bucket } = config;
@@ -65,7 +66,7 @@ const Admin = () => {
 
     return (
         <section className="admin-wrapper">
-            <Authenticator>
+            
                 <section>
                     <header className="form-header">
                         <h3>Add New Book</h3>
@@ -89,14 +90,44 @@ const Admin = () => {
                             <input type="text" placeholder="Enter book price" onChange={(e) => setBookDetails({ ...bookDetails, price: e.target.value })} required />
                             
                             <label>Featured?</label>
-                            <input type="checkbox" checked={bookDetails.featured} onChange={() => setBookDetails({ ...bookDetails, featured: !bookDetails.featured })} />
+                            <input type="checkbox" className='featured-checkbox' checked={bookDetails.featured} onChange={() => setBookDetails({ ...bookDetails, featured: !bookDetails.featured })} />
                         </div>
-                        <button className="btn" type="submit">Submit</button>
+                        <div className='submit-form'>
+                            <button className="btn" type="submit">Submit</button>
+                        </div>
                     </form>
                 </section>
-            </Authenticator>
+            
         </section>
     );
 };
 
-export default Admin;
+const styles = {
+    container: {
+      width: 400,
+      margin: '0 auto',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      padding: 20
+    },
+    todo: { marginBottom: 15 },
+    input: {
+      border: 'none',
+      backgroundColor: '#ddd',
+      marginBottom: 10,
+      padding: 8,
+      fontSize: 18
+    },
+    todoName: { fontSize: 20, fontWeight: 'bold' },
+    todoDescription: { marginBottom: 0 },
+    button: {
+      backgroundColor: 'black',
+      color: 'white',
+      outline: 'none',
+      fontSize: 18,
+      padding: '12px 0px'
+    }
+  };
+
+export default withAuthenticator (Admin) ;
