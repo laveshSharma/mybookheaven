@@ -17,7 +17,7 @@ const Books = () => {
                     <div className="book-image">
                         <img src={image} alt={title} />
                     </div>
-                    <Link to={`books/${id}`} className="btn book-link">Details</Link>
+                    <Link to={`/books/${id}`} className="btn book-link">Details</Link>
                 </article>
             ))}
         </section>
